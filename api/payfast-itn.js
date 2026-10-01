@@ -1,4 +1,5 @@
 const crypto = require("crypto");
+const dns = require("dns").promises;
 
 const PACKAGES = {
   "launch-day": 750,
@@ -21,33 +22,33 @@ function parseBody(req) {
   return {};
 }
 
-function paramString(data) {
-  const parts = [];
-  for (const [key, value] of Object.entries(data)) {
-    if (key === "signature") break;
-    if (value !== undefined && value !== null && String(value) !== "") {
-      parts.push(key + "=" + urlencode(value));
-    }
-  }
-  return parts.join("&");
+function parameterString(data) {
+  return Object.entries(data)
+    .filter(([key, value]) => key !== "signature" && value !== undefined && value !== null && String(value) !== "")
+    .map(([key, value]) => key + "=" + urlencode(value))
+    .join("&");
 }
 
-function ipToInt(ip) {
-  const p = ip.split(".").map(Number);
-  if (p.length !== 4 || p.some(n => !Number.isInteger(n) || n < 0 || n > 255)) return null;
-  return (((p[0]<<24)>>>0) + (p[1]<<16) + (p[2]<<8) + p[3]) >>> 0;
+function normalizeIp(ip) {
+  return String(ip || "").replace(/^::ffff:/, "").trim();
 }
-function inCidr(ip, cidr) {
-  const [net, bitsStr] = cidr.split("/");
-  const bits = Number(bitsStr);
-  const a = ipToInt(ip), n = ipToInt(net);
-  if (a === null || n === null) return false;
-  const mask = bits === 0 ? 0 : (0xFFFFFFFF << (32-bits)) >>> 0;
-  return (a & mask) === (n & mask);
-}
-function validPayfastIp(ip) {
-  const ranges = ["197.97.145.144/28","41.74.179.192/27","102.216.36.0/28","102.216.36.128/28","144.126.193.139/32"];
-  return ranges.some(r => inCidr(ip, r));
+
+async function validPayfastSource(req, sandbox) {
+  const forwarded = normalizeIp(String(req.headers["x-forwarded-for"] || "").split(",")[0]);
+  if (!forwarded) return false;
+
+  const hosts = sandbox
+    ? ["sandbox.payfast.co.za"]
+    : ["www.payfast.co.za", "w1w.payfast.co.za", "w2w.payfast.co.za"];
+
+  const allowed = new Set();
+  for (const host of hosts) {
+    try {
+      const addresses = await dns.lookup(host, { all: true });
+      addresses.forEach(a => allowed.add(normalizeIp(a.address)));
+    } catch (_) {}
+  }
+  return allowed.has(forwarded);
 }
 
 module.exports = async function handler(req, res) {
@@ -58,30 +59,37 @@ module.exports = async function handler(req, res) {
     const mode = (process.env.PAYFAST_MODE || "sandbox").toLowerCase();
     const sandbox = mode !== "live";
     const passphrase = process.env.PAYFAST_PASSPHRASE || (sandbox ? "payfast" : "");
-    const host = sandbox ? "sandbox.payfast.co.za" : "www.payfast.co.za";
+    const payfastHost = sandbox ? "sandbox.payfast.co.za" : "www.payfast.co.za";
 
-    const params = paramString(data);
+    const params = parameterString(data);
     const signed = passphrase ? params + "&passphrase=" + urlencode(passphrase) : params;
     const expectedSig = crypto.createHash("md5").update(signed).digest("hex");
-    const sigOk = String(data.signature || "") === expectedSig;
+    const sigOk = String(data.signature || "").toLowerCase() === expectedSig.toLowerCase();
 
-    const forwarded = String(req.headers["x-forwarded-for"] || "").split(",")[0].trim();
-    const ipOk = validPayfastIp(forwarded);
+    const sourceOk = await validPayfastSource(req, sandbox);
 
     const expectedAmount = PACKAGES[data.custom_str1];
     const amountOk = Number.isFinite(expectedAmount) &&
+      Number.isFinite(Number(data.amount_gross)) &&
       Math.abs(Number(data.amount_gross) - expectedAmount) <= 0.01;
 
-    const validation = await fetch("https://" + host + "/eng/query/validate", {
+    const validation = await fetch("https://" + payfastHost + "/eng/query/validate", {
       method: "POST",
       headers: { "content-type": "application/x-www-form-urlencoded" },
       body: params
     });
     const confirmation = (await validation.text()).trim() === "VALID";
 
-    if (!(sigOk && ipOk && amountOk && confirmation)) {
+    const completed = String(data.payment_status || "").toUpperCase() === "COMPLETE";
+
+    if (!(sigOk && sourceOk && amountOk && confirmation && completed)) {
       console.error("Rejected PayFast ITN", {
-        orderId: data.m_payment_id, sigOk, ipOk, amountOk, confirmation, sourceIp: forwarded
+        orderId: data.m_payment_id,
+        sigOk,
+        sourceOk,
+        amountOk,
+        confirmation,
+        completed
       });
       return res.status(400).send("Invalid");
     }
@@ -89,7 +97,6 @@ module.exports = async function handler(req, res) {
     console.log("PAYFAST_PAYMENT_VERIFIED", {
       orderId: data.m_payment_id,
       paymentId: data.pf_payment_id,
-      status: data.payment_status,
       packageId: data.custom_str1,
       businessName: data.custom_str2,
       phone: data.custom_str3,

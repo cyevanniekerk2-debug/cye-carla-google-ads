@@ -1,3 +1,6 @@
+// EFT is active until PayFast merchant verification is complete.
+location.replace("eft-checkout.html?product=" + encodeURIComponent(new URLSearchParams(location.search).get("package") || "quick-boost-daily"));
+
 const PRODUCTS={
   "quick-boost-daily":{name:"Quick Boost",duration:"Daily campaign",price:"R600"},
   "morning-boost-daily":{name:"Morning Boost",duration:"Daily campaign",price:"R1,000"},

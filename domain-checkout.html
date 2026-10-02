@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Domain Checkout | Prime Digital</title><link rel="stylesheet" href="assets/styles.css"></head>
+<body>
+<header class="nav"><a class="brand" href="index.html">PRIME<span>DIGITAL</span></a><a href="domains.html">← Back to Domains</a></header>
+<main class="domain-checkout-shell">
+  <section class="domain-checkout-card">
+    <span class="eyebrow">DOMAIN CHECKOUT</span>
+    <h1>Register <span id="selectedDomain">your domain</span></h1>
+    <div class="checkout-lines"><div><span>Domain registration</span><strong>Calculated by extension</strong></div><div><span>Prime Domain Care</span><strong>R150 / month</strong></div></div>
+    <p class="lead-muted">Next we will connect secure payment, registrant details, recurring billing and automatic renewal management here.</p>
+    <a class="btn ghost" href="domains.html">Change Domain</a>
+  </section>
+  <section class="checkout-compliance">
+    <span class="eyebrow">BEFORE YOU PAY</span><h2>Review your order & permissions.</h2>
+    <div class="compliance-grid">
+      <label><input type="checkbox"> I confirm my business and contact information is accurate.</label>
+      <label><input type="checkbox"> I have read the <a href="terms.html" target="_blank">Service Terms</a>.</label>
+      <label><input type="checkbox"> I have read the <a href="privacy.html" target="_blank">Privacy & POPIA Notice</a>.</label>
+      <label><input type="checkbox"> I understand the <a href="refunds.html" target="_blank">refund, cancellation and renewal policy</a>.</label>
+      <label><input type="checkbox"> For recurring services, I understand the billing frequency and renewal terms shown in checkout.</label>
+    </div>
+  </section>
+</main>
+<script>const d=new URLSearchParams(location.search).get('domain');if(d)document.getElementById('selectedDomain').textContent=d;</script>
+<button class="support-launcher" id="supportLauncher"><span>AI</span> Help me</button>
+<aside class="support-bot" id="supportBot" aria-hidden="true"><header><div><span class="bot-dot"></span><strong>Prime Assistant</strong><small>Website support</small></div><button id="closeBot">×</button></header><div class="bot-messages" id="botMessages"><div class="bot-msg bot">Hi 👋 Ask me about Prime Digital's ads, websites, domains, email or pricing.</div></div><div class="quick-prompts"><button>Google Ads prices</button><button>Website packages</button><button>Business email</button><button>Domain help</button></div><form id="botForm"><input id="botInput" placeholder="Ask about Prime Digital..." autocomplete="off"><button>Send</button></form><button class="agent-handoff" id="agentHandoff">Speak to Carla or Cye on WhatsApp</button></aside>
+<script src="assets/support-bot.js"></script><script src="assets/effects.js"></script>
+</body></html>

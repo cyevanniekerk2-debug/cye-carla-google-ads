@@ -1,9 +1,9 @@
 const BANK = {
-  bankName: "TO BE ADDED",
-  accountHolder: "TO BE ADDED",
-  accountNumber: "TO BE ADDED",
-  branchCode: "TO BE ADDED",
-  accountType: "TO BE ADDED"
+  bankName: "CAPITEC",
+  accountHolder: "C & C PRIME DIGITAL",
+  accountNumber: "2605354292",
+  branchCode: "470010",
+  accountType: "ENTREPRENEUR CURRENT"
 };
 
 const CATALOG = {

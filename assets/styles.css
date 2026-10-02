@@ -229,3 +229,37 @@ body>*{position:relative;z-index:1}
 .checkout-compliance{max-width:1050px;margin:20px auto 80px;padding:30px;border:1px solid rgba(104,255,178,.16);background:rgba(104,255,178,.025);border-radius:20px}.checkout-compliance h2{font-size:32px}.compliance-grid{display:grid;gap:10px;margin:20px 0}.compliance-grid label{display:flex;gap:10px;align-items:flex-start;color:#b9c3cf;font-size:13px}.compliance-grid input{margin-top:2px}.checkout-compliance p{color:#7f8b99;line-height:1.6}.footer-links{display:flex;gap:15px;flex-wrap:wrap}.footer-links a{font-size:12px;color:#aeb9c7}.footer-links a:hover{color:var(--accent)}
 @media(max-width:900px){.portal-shell{grid-template-columns:1fr}.portal-sidebar{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);flex-direction:row;overflow:auto}.portal-content{padding:25px 16px}.portal-stats{grid-template-columns:1fr 1fr}.service-account-grid,.renewal-grid,.kanban{grid-template-columns:1fr}.order-timeline{grid-template-columns:1fr}.ticket-form{grid-template-columns:1fr}.ticket-form .wide{grid-column:auto}.tr{grid-template-columns:1fr 1fr}.tr.th{display:none}}
 @media(max-width:560px){.portal-stats{grid-template-columns:1fr}.portal-heading{align-items:flex-start;flex-direction:column}.portal-heading h1{font-size:38px}.plan-summary{grid-template-columns:1fr}}
+/* ===== PRICING TABS + LIVE PAYFAST CHECKOUT ===== */
+.pricing-platform{max-width:1320px;margin:0 auto;padding:0 5vw 100px}
+.pricing-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 32px}
+.pricing-tabs button{border:1px solid var(--line);background:#0d121a;color:#9aa6b5;border-radius:999px;padding:12px 20px;font-weight:800;cursor:pointer}
+.pricing-tabs button.active{background:var(--accent);color:#06110c;border-color:var(--accent)}
+.pricing-grid{display:grid;grid-template-columns:repeat(5,minmax(240px,1fr));gap:16px;overflow-x:auto;padding:5px 2px 16px}
+.pricing-grid .package-card{min-width:250px}
+.pricing-notice{max-width:1000px;margin:22px auto 0}
+
+.live-checkout-shell{max-width:1120px;margin:0 auto;padding:60px 5vw 100px}
+.live-checkout-head{display:flex;justify-content:space-between;gap:25px;align-items:flex-end;margin-bottom:26px}
+.live-checkout-head h1{font-size:52px;letter-spacing:-.05em;margin:7px 0}
+.live-checkout-head p{max-width:700px;color:var(--muted);line-height:1.7}
+.live-checkout-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px}
+.live-checkout-card,.live-summary-card{border:1px solid var(--line);border-radius:22px;background:#0d121a;padding:28px}
+.live-checkout-card h2,.live-summary-card h2{margin-top:0}
+.live-checkout-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.live-checkout-form label{display:grid;gap:7px;color:#aab5c3;font-size:12px}
+.live-checkout-form .wide{grid-column:1/-1}
+.live-checkout-form input,.live-checkout-form textarea,.live-checkout-form select{padding:14px;border-radius:10px;border:1px solid var(--line);background:#080b10;color:white}
+.checkout-terms{display:grid;gap:10px;margin:18px 0;color:#aeb9c6;font-size:12px}
+.checkout-terms label{display:flex;gap:9px;align-items:flex-start}
+.checkout-terms a{color:var(--accent)}
+.payfast-btn{width:100%;border:0;border-radius:11px;padding:16px;background:var(--accent);color:#06110c;font-weight:900;cursor:pointer}
+.payfast-btn:disabled{opacity:.55;cursor:wait}
+.checkout-error{display:none;margin-top:12px;padding:12px;border:1px solid rgba(255,100,100,.25);background:rgba(255,100,100,.06);color:#ff9b9b;border-radius:10px}
+.summary-row{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid var(--line)}
+.summary-row span{color:#84909f}.summary-row strong{text-align:right}
+.secure-note{margin-top:18px;padding:15px;border:1px solid rgba(104,255,178,.16);background:rgba(104,255,178,.04);border-radius:12px;color:#94a4b1;font-size:12px;line-height:1.6}
+.payment-result{max-width:760px;margin:100px auto;padding:45px;border:1px solid var(--line);border-radius:24px;background:#0d121a;text-align:center}
+.payment-result h1{font-size:50px;letter-spacing:-.05em}
+.payment-result p{color:var(--muted);line-height:1.7}
+@media(max-width:1100px){.pricing-grid{grid-template-columns:repeat(5,280px)}}
+@media(max-width:820px){.live-checkout-grid{grid-template-columns:1fr}.live-checkout-head{display:block}.live-checkout-form{grid-template-columns:1fr}.live-checkout-form .wide{grid-column:auto}}

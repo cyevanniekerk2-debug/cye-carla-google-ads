@@ -301,3 +301,28 @@ body>*{position:relative;z-index:1}
   .eft-site-banner{display:block}
   .eft-site-banner strong{display:block;margin-bottom:6px}
 }
+
+/* ===== TRUST PARTNERS & CERTIFICATIONS ===== */
+.trust-partners-section{max-width:1260px;margin:0 auto;padding:70px 5vw;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+.trust-partners-copy h2{font-size:48px;letter-spacing:-.045em;margin:8px 0 14px}
+.trust-partners-copy>p{color:var(--muted);line-height:1.75;max-width:780px}
+.trust-credential-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.trust-credential-card{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid var(--line);border-radius:16px;background:#0d121a}
+.trust-mark{width:48px;height:48px;flex:0 0 48px;border-radius:14px;display:grid;place-items:center;font-weight:900;background:#121923;border:1px solid var(--line)}
+.google-mark{color:#8ab4f8}
+.verify-mark{color:#78f5ba}
+.payfast-mark{color:#ff4f64}
+.trust-label{display:block;font-size:10px;letter-spacing:.12em;color:var(--accent);font-weight:900;margin-bottom:5px}
+.trust-credential-card strong{display:block;color:#fff;margin-bottom:6px}
+.trust-credential-card p{margin:0;color:#94a2b1;font-size:13px;line-height:1.55}
+.trust-link{display:inline-block;margin-top:10px;color:var(--accent);font-size:12px;font-weight:800}
+.google-badge-slot{margin-top:18px;padding:15px 17px;border:1px dashed rgba(138,180,248,.35);border-radius:14px;background:rgba(138,180,248,.04)}
+.google-badge-slot strong{display:block;color:#fff;margin-bottom:5px}
+.google-badge-slot span{color:#92a0ae;font-size:12px;line-height:1.55}
+.payment-badges-pro{display:flex;gap:10px;flex-wrap:wrap}
+.payment-badges-pro span{padding:11px 14px;border-radius:999px;background:#0d121a;border:1px solid var(--line);font-weight:900;font-size:11px}
+@media(max-width:900px){
+  .trust-partners-section{grid-template-columns:1fr}
+  .trust-credential-grid{grid-template-columns:1fr}
+  .trust-partners-copy h2{font-size:38px}
+}

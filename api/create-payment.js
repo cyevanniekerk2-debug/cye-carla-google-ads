@@ -36,9 +36,9 @@ module.exports = async function handler(req, res) {
 
     const mode = (process.env.PAYFAST_MODE || "sandbox").toLowerCase();
     const sandbox = mode !== "live";
-    const merchantId = process.env.PAYFAST_MERCHANT_ID || (sandbox ? "10004002" : "");
-    const merchantKey = process.env.PAYFAST_MERCHANT_KEY || (sandbox ? "q1cd2rdny4a53" : "");
-    const passphrase = process.env.PAYFAST_PASSPHRASE || (sandbox ? "payfast" : "");
+    const merchantId = process.env.PAYFAST_MERCHANT_ID || (sandbox ? "10000100" : "");
+    const merchantKey = process.env.PAYFAST_MERCHANT_KEY || (sandbox ? "46f0cd694581a" : "");
+    const passphrase = process.env.PAYFAST_PASSPHRASE || (sandbox ? "jt7NOE43FZPn" : "");
 
     if (!merchantId || !merchantKey) {
       return res.status(500).json({ error: "PayFast merchant credentials are not configured" });

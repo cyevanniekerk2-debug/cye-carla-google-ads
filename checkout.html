@@ -1,36 +1,58 @@
 <!doctype html>
-<html lang="en-ZA">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Secure Checkout | Prime Digital</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body{background:linear-gradient(145deg,#f7f5ff,#effcff);min-height:100vh}.checkout-wrap{max-width:850px;margin:auto;padding:55px 20px}.checkout-card{background:#fff;border:1px solid #e4e6f3;border-radius:24px;padding:34px;box-shadow:0 25px 70px #282a6b19}.checkout-card h1{font-size:40px;letter-spacing:-2px;margin:8px 0}.checkout-card>p{color:#65708a;line-height:1.7}.checkout-summary{display:flex;justify-content:space-between;gap:20px;background:#f7f7fc;border:1px solid #e8e9f3;border-radius:16px;padding:20px;margin:25px 0}.checkout-summary div{display:flex;flex-direction:column;gap:5px}.checkout-summary small{font-weight:900;color:#7c8498}.checkout-summary b{font-size:21px}.checkout-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.checkout-form label{display:flex;flex-direction:column;gap:7px}.checkout-form label span{font-size:10px;font-weight:900;color:#5e6880}.checkout-form input,.checkout-form textarea{border:1px solid #dfe2ee;border-radius:11px;padding:14px 15px;font:inherit}.checkout-form .wide{grid-column:1/-1}.pay-button{grid-column:1/-1;border:0;border-radius:12px;padding:18px;background:linear-gradient(90deg,#6138ed,#087bf5);color:#fff;font-weight:900;cursor:pointer}.pay-button:disabled{opacity:.6;cursor:wait}.secure{grid-column:1/-1;text-align:center;color:#788197;font-size:11px}.error{grid-column:1/-1;color:#a11;background:#fff1f1;padding:12px;border-radius:10px;display:none}@media(max-width:650px){.checkout-form{grid-template-columns:1fr}.checkout-form .wide,.pay-button,.secure,.error{grid-column:1}.checkout-card{padding:24px 18px}.checkout-card h1{font-size:34px}}
-  </style>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="checkout-wrap">
-    <a class="brand" href="/"><span class="logo">PD</span><span><b>Prime Digital</b><small>SECURE CHECKOUT</small></span></a>
-    <div class="checkout-card">
-      <small>PAYFAST SECURE PAYMENT</small>
-      <h1>Complete your order.</h1>
-      <p>Enter your business details. Your package amount is set by Prime Digital and cannot be changed in the browser.</p>
-      <div class="checkout-summary"><div><small>PACKAGE</small><b id="package-name">Loading…</b><span id="package-days"></span></div><div><small>AMOUNT</small><b id="package-price"></b></div></div>
-      <form id="checkout-form" class="checkout-form">
-        <label><span>Full name *</span><input name="fullName" required autocomplete="name"></label>
-        <label><span>Email *</span><input name="email" type="email" required autocomplete="email"></label>
-        <label><span>Phone / WhatsApp *</span><input name="phone" required autocomplete="tel"></label>
-        <label><span>Business name *</span><input name="businessName" required autocomplete="organization"></label>
-        <label><span>Website</span><input name="website" type="url" placeholder="https://"></label>
-        <label><span>Target area *</span><input name="targetArea" required placeholder="Town, province or South Africa"></label>
-        <label class="wide"><span>What work do you need? *</span><textarea name="workDetails" rows="4" required></textarea></label>
-        <div id="checkout-error" class="error"></div>
-        <button id="pay-button" class="pay-button" type="submit">Pay securely with PayFast →</button>
-        <div class="secure">🔒 Secure PayFast checkout · Test mode until Prime Digital switches the integration live</div>
-      </form>
-    </div>
+<header class="nav">
+  <a class="brand" href="index.html">PRIME<span>DIGITAL</span></a>
+  <nav><a href="packages.html">Google Ads</a><a href="websites.html">Websites</a><a href="domains.html">Domains</a><a href="email.html">Business Email</a></nav>
+  <a class="nav-cta" href="packages.html">Change Package</a>
+</header>
+
+<main class="live-checkout-shell">
+  <div class="live-checkout-head">
+    <div><span class="eyebrow">SECURE PAYFAST CHECKOUT</span><h1>Complete your campaign order.</h1></div>
+    <p>Your campaign package and amount are verified on the Prime Digital server before PayFast opens. The order is only treated as paid after PayFast confirms it server-to-server.</p>
   </div>
-  <script src="checkout.js"></script>
+
+  <div class="live-checkout-grid">
+    <section class="live-checkout-card">
+      <h2>Campaign details</h2>
+      <form id="checkoutForm" class="live-checkout-form">
+        <label>Full name *<input name="fullName" required autocomplete="name"></label>
+        <label>Email *<input name="email" type="email" required autocomplete="email"></label>
+        <label>Phone / WhatsApp *<input name="phone" required autocomplete="tel"></label>
+        <label>Business name *<input name="businessName" required autocomplete="organization"></label>
+        <label>Website URL<input name="website" type="url" placeholder="https://"></label>
+        <label>Target area *<input name="targetArea" required placeholder="Town, city or South Africa"></label>
+        <label>Industry / service<input name="industry" placeholder="e.g. Real Estate, Plumbing, Salon"></label>
+        <label>Preferred campaign date<input name="campaignDate" type="date"></label>
+        <label class="wide">What should customers contact you about? *<textarea name="workDetails" rows="5" required placeholder="Tell Prime Digital what you want promoted"></textarea></label>
+        <div class="checkout-terms wide">
+          <label><input id="terms" type="checkbox" required> I agree to the <a href="terms.html" target="_blank">Service Terms</a>.</label>
+          <label><input id="privacy" type="checkbox" required> I have read the <a href="privacy.html" target="_blank">Privacy & POPIA Notice</a>.</label>
+          <label><input id="refunds" type="checkbox" required> I understand the <a href="refunds.html" target="_blank">refund and cancellation policy</a>.</label>
+        </div>
+        <div id="checkoutError" class="checkout-error wide"></div>
+        <button id="payBtn" class="payfast-btn wide" type="submit">Pay securely with PayFast →</button>
+      </form>
+    </section>
+
+    <aside class="live-summary-card">
+      <span class="eyebrow">ORDER SUMMARY</span>
+      <h2 id="summaryName">Loading package…</h2>
+      <div class="summary-row"><span>Campaign</span><strong id="summaryDuration">—</strong></div>
+      <div class="summary-row"><span>Amount</span><strong id="summaryPrice">—</strong></div>
+      <div class="summary-row"><span>Payment</span><strong>PayFast</strong></div>
+      <div class="secure-note">🔒 Secure payment processing. Prime Digital does not mark the order paid from the browser return alone; PayFast’s server notification is verified first.</div>
+      <div class="secure-note"><strong>Typical response/start time: within 30 minutes</strong><br>During business hours, once payment and campaign details are confirmed.</div>
+    </aside>
+  </div>
+</main>
+<script src="checkout.js"></script>
 </body>
 </html>

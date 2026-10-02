@@ -83,14 +83,17 @@ module.exports = async function handler(req, res) {
     const completed = String(data.payment_status || "").toUpperCase() === "COMPLETE";
 
     if (!(sigOk && sourceOk && amountOk && confirmation && completed)) {
-      console.error("Rejected PayFast ITN", {
-        orderId: data.m_payment_id,
+      console.error("PAYFAST_ITN_DEBUG " + JSON.stringify({
+        orderId: data.m_payment_id || null,
         sigOk,
         sourceOk,
         amountOk,
         confirmation,
-        completed
-      });
+        completed,
+        paymentStatus: data.payment_status || null,
+        packageId: data.custom_str1 || null,
+        amountGross: data.amount_gross || null
+      }));
       return res.status(400).send("Invalid");
     }
 

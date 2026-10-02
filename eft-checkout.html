@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EFT Checkout | Prime Digital</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">PRIME<span>DIGITAL</span></a>
+  <nav><a href="packages.html">Google Ads</a><a href="websites.html">Websites</a><a href="domains.html">Domains</a><a href="email.html">Business Email</a></nav>
+  <a class="nav-cta" href="index.html">Home</a>
+</header>
+
+<main class="eft-shell">
+  <section class="eft-hero">
+    <span class="eyebrow">TEMPORARY EFT CHECKOUT</span>
+    <h1>Pay by EFT, then send your order + proof on WhatsApp.</h1>
+    <p>PayFast is being finalised. In the meantime, Prime Digital can accept EFT payments. Your order is not activated until payment has cleared and the payment is matched to your order reference.</p>
+  </section>
+
+  <div class="eft-grid">
+    <section class="eft-card">
+      <span class="eyebrow">1 · YOUR ORDER</span>
+      <h2 id="productName">Loading selection…</h2>
+      <div class="eft-summary">
+        <div><span>Amount due now</span><strong id="amountDue">—</strong></div>
+        <div id="recurringRow" hidden><span>Recurring thereafter</span><strong id="recurringAmount">—</strong></div>
+        <div><span>Order reference</span><strong id="orderRef">—</strong></div>
+      </div>
+
+      <form id="eftForm" class="eft-form">
+        <label>Full name *<input name="fullName" required autocomplete="name"></label>
+        <label>Business name *<input name="businessName" required autocomplete="organization"></label>
+        <label>Email *<input name="email" type="email" required autocomplete="email"></label>
+        <label>Phone / WhatsApp *<input name="phone" required autocomplete="tel"></label>
+        <label class="wide">What do you need / campaign details *<textarea name="details" rows="5" required></textarea></label>
+
+        <div class="eft-legal wide">
+          <label><input type="checkbox" required> I confirm the order details above are correct.</label>
+          <label><input type="checkbox" required> I understand that sending proof of payment does not by itself prove cleared funds; Prime Digital will verify the payment before activating the order.</label>
+          <label><input type="checkbox" required> I agree to the <a href="terms.html" target="_blank">Service Terms</a>, <a href="privacy.html" target="_blank">Privacy & POPIA Notice</a>, and <a href="refunds.html" target="_blank">Refunds & Cancellations policy</a>.</label>
+        </div>
+
+        <button id="prepareBtn" class="btn primary full wide" type="submit">Prepare EFT instructions →</button>
+      </form>
+    </section>
+
+    <aside class="eft-card bank-card">
+      <span class="eyebrow">2 · BANK DETAILS</span>
+      <h2>Prime Digital EFT details</h2>
+      <div id="bankPending" class="eft-warning">Bank details are being added. Do not make payment until the details below are complete.</div>
+      <div class="bank-lines">
+        <div><span>Bank</span><strong id="bankName">TO BE ADDED</strong></div>
+        <div><span>Account holder</span><strong id="accountHolder">TO BE ADDED</strong></div>
+        <div><span>Account number</span><strong id="accountNumber">TO BE ADDED</strong></div>
+        <div><span>Branch code</span><strong id="branchCode">TO BE ADDED</strong></div>
+        <div><span>Account type</span><strong id="accountType">TO BE ADDED</strong></div>
+        <div><span>Payment reference</span><strong id="paymentRef">—</strong></div>
+      </div>
+      <div class="secure-note"><strong>Important:</strong> Use the exact order reference shown above as your EFT reference. This helps Prime Digital match the payment to the correct order.</div>
+    </aside>
+  </div>
+
+  <section id="proofStep" class="eft-card proof-card" hidden>
+    <span class="eyebrow">3 · SEND ORDER + PROOF OF PAYMENT</span>
+    <h2>Payment made? Send us the order details on WhatsApp.</h2>
+    <p>Choose Carla or Cye below. WhatsApp will open with your order information already filled in. <strong>Before sending the message, attach your proof of payment (PDF or screenshot) in WhatsApp.</strong></p>
+    <div class="eft-proof-check">
+      <label><input id="paidCheck" type="checkbox"> I have made the EFT using the exact order reference shown above.</label>
+      <label><input id="popCheck" type="checkbox"> I will attach the proof of payment to the WhatsApp message before sending it.</label>
+    </div>
+    <div class="contact-founders">
+      <button id="whatsappCarla" class="founder-contact" disabled><span>CARLA KLOPPERS</span><strong>Send order + POP to Carla</strong><small>+27 64 134 0537</small></button>
+      <button id="whatsappCye" class="founder-contact" disabled><span>CYE VAN NIEKERK</span><strong>Send order + POP to Cye</strong><small>+27 74 771 7078</small></button>
+    </div>
+    <div class="secure-note">Prime Digital will only mark the order as paid after the EFT has been verified in the receiving bank account. A screenshot or PDF alone is not treated as final proof of cleared funds.</div>
+  </section>
+</main>
+
+<script src="eft-checkout.js"></script>
+<script src="assets/effects.js"></script>
+</body>
+</html>

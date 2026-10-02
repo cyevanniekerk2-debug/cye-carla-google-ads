@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Portal | Prime Digital</title><link rel="stylesheet" href="assets/styles.css"></head>
+<body class="portal-body admin-body">
+<header class="portal-topbar">
+<a class="brand brand-xl" href="index.html"><span class="brand-mark">PD</span> PRIME<span>DIGITAL</span></a>
+<div class="portal-user"><span class="status-dot"></span><span>Admin Demo</span><a href="index.html">Exit</a></div>
+</header>
+<main class="portal-shell">
+<aside class="portal-sidebar">
+<a class="active" href="#dashboard">Dashboard</a><a href="#customers">Customers</a><a href="#orders">Orders</a><a href="#billing">Billing</a><a href="#tickets">Tickets</a><a href="#renewals">Renewals</a><a href="#reviews">Reviews</a>
+</aside>
+<section class="portal-content">
+<div class="portal-heading" id="dashboard"><div><span class="eyebrow">ADMIN CONTROL CENTRE</span><h1>Run Prime Digital from one dashboard.</h1><p>Prototype interface for Carla & Cye. No real customer data is stored yet.</p></div></div>
+<div class="portal-stats">
+<article><span>Customers</span><strong>128</strong><small>Demo metric</small></article>
+<article><span>Orders this month</span><strong>34</strong><small>Demo metric</small></article>
+<article><span>Recurring services</span><strong>211</strong><small>Demo metric</small></article>
+<article><span>Support open</span><strong>7</strong><small>Demo metric</small></article>
+</div>
+
+<section class="portal-panel" id="customers"><div class="panel-head"><div><span class="eyebrow">CRM</span><h2>Customer database</h2></div><button disabled>Add customer</button></div>
+<div class="portal-table"><div class="tr th"><span>Customer</span><span>Services</span><span>Status</span><span>Next action</span></div>
+<div class="tr"><span>Demo Plumbing Pty</span><span>Website · Email · Domain</span><span class="badge green">Active</span><span>Renewal in 18 days</span></div>
+<div class="tr"><span>Demo Legal Inc</span><span>Google Ads</span><span class="badge amber">Needs review</span><span>Campaign brief</span></div></div>
+</section>
+
+<section class="portal-panel" id="orders"><div class="panel-head"><div><span class="eyebrow">FULFILMENT</span><h2>Paid order queue</h2></div></div>
+<div class="kanban">
+<article><span>PAID</span><strong>#PD-10242</strong><small>Business Launch</small><button>Open brief</button></article>
+<article><span>BUILDING</span><strong>#PD-10241</strong><small>Morning Boost</small><button>Open campaign</button></article>
+<article><span>CLIENT REVIEW</span><strong>#PD-10236</strong><small>Business Pro Website</small><button>Review changes</button></article>
+</div></section>
+
+<section class="portal-panel" id="billing"><div class="panel-head"><div><span class="eyebrow">BILLING</span><h2>Invoices, payments & failed renewals</h2></div></div>
+<div class="portal-table"><div class="tr th"><span>Customer</span><span>Invoice</span><span>Status</span><span>Amount</span></div>
+<div class="tr"><span>Demo Plumbing Pty</span><span>INV-00031</span><span class="badge green">Paid</span><span>R899</span></div>
+<div class="tr"><span>Demo Retail CC</span><span>INV-00032</span><span class="badge red">Failed</span><span>R499</span></div></div></section>
+
+<section class="portal-panel" id="tickets"><div class="panel-head"><div><span class="eyebrow">SUPPORT</span><h2>Ticket queue</h2></div></div>
+<div class="ticket-row"><span>#SUP-228</span><strong>Homepage phone number change</strong><span class="badge amber">In progress</span></div>
+<div class="ticket-row"><span>#SUP-229</span><strong>Email password reset</strong><span class="badge red">New</span></div></section>
+
+<section class="portal-panel" id="renewals"><div class="panel-head"><div><span class="eyebrow">RENEWAL ENGINE</span><h2>Upcoming renewals & notices</h2></div></div>
+<div class="renewal-grid"><article><span>Domains renewing in 30 days</span><strong>12</strong><small>Automatic notice queue</small></article><article><span>Monthly plans due this week</span><strong>27</strong><small>Recurring billing queue</small></article></div></section>
+
+<section class="portal-panel" id="reviews"><div class="panel-head"><div><span class="eyebrow">MODERATION</span><h2>Reviews & suggestions</h2></div></div>
+<div class="review-admin-card"><strong>“Great support...”</strong><p>Demo review awaiting verification and approval.</p><div><button>Approve</button><button>Reject</button></div></div></section>
+</section>
+</main>
+</body></html>

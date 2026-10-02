@@ -3,5 +3,12 @@
     "api/*.js": {
       "maxDuration": 10
     }
-  }
+  },
+  "redirects": [
+    {"source":"/checkout-quick-boost.html","destination":"/checkout.html?package=quick-boost-daily","permanent":false},
+    {"source":"/checkout-morning-boost.html","destination":"/checkout.html?package=morning-boost-daily","permanent":false},
+    {"source":"/checkout-daily-drive.html","destination":"/checkout.html?package=daily-drive-daily","permanent":false},
+    {"source":"/checkout-lead-rush.html","destination":"/checkout.html?package=lead-rush-daily","permanent":false},
+    {"source":"/checkout-prime-day.html","destination":"/checkout.html?package=prime-day-daily","permanent":false}
+  ]
 }

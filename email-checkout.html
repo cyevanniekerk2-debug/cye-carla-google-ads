@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Business Email Checkout | Prime Digital</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">PRIME<span>DIGITAL</span></a>
+  <a href="email.html">← Back to Business Email</a>
+</header>
+<main class="domain-checkout-shell">
+  <section class="domain-checkout-card">
+    <span class="eyebrow">BUSINESS EMAIL CHECKOUT</span>
+    <h1 id="planName">Business Email</h1>
+    <div class="checkout-lines">
+      <div><span>Monthly plan</span><strong id="monthlyPrice">Select a plan</strong></div>
+      <div><span>Once-off setup</span><strong>R250</strong></div>
+    </div>
+    <h3>What we’ll collect next</h3>
+    <ul class="checkout-list"><li>Business name</li><li>Domain name</li><li>Mailbox names required</li><li>Primary contact details</li><li>Secure recurring payment</li></ul>
+    <p class="lead-muted">The secure recurring billing and automated mailbox provisioning will be connected in the next build stage.</p>
+    <a class="btn primary" href="email.html">Change Plan</a>
+  </section>
+  <section class="checkout-compliance">
+    <span class="eyebrow">BEFORE YOU PAY</span><h2>Review your order & permissions.</h2>
+    <div class="compliance-grid">
+      <label><input type="checkbox"> I confirm my business and contact information is accurate.</label>
+      <label><input type="checkbox"> I have read the <a href="terms.html" target="_blank">Service Terms</a>.</label>
+      <label><input type="checkbox"> I have read the <a href="privacy.html" target="_blank">Privacy & POPIA Notice</a>.</label>
+      <label><input type="checkbox"> I understand the <a href="refunds.html" target="_blank">refund, cancellation and renewal policy</a>.</label>
+      <label><input type="checkbox"> For recurring services, I understand the billing frequency and renewal terms shown in checkout.</label>
+    </div>
+  </section>
+</main>
+<script>
+const p=new URLSearchParams(location.search),plan=p.get('plan'),price=p.get('price');
+if(plan)document.getElementById('planName').textContent=plan;
+if(price)document.getElementById('monthlyPrice').textContent='R'+price+' / month';
+</script>
+<button class="support-launcher" id="supportLauncher"><span>AI</span> Help me</button>
+<aside class="support-bot" id="supportBot" aria-hidden="true"><header><div><span class="bot-dot"></span><strong>Prime Assistant</strong><small>Website support</small></div><button id="closeBot">×</button></header><div class="bot-messages" id="botMessages"><div class="bot-msg bot">Hi 👋 Ask me about Prime Digital's ads, websites, domains, email or pricing.</div></div><div class="quick-prompts"><button>Google Ads prices</button><button>Website packages</button><button>Business email</button><button>Domain help</button></div><form id="botForm"><input id="botInput" placeholder="Ask about Prime Digital..." autocomplete="off"><button>Send</button></form><button class="agent-handoff" id="agentHandoff">Speak to Carla or Cye on WhatsApp</button></aside>
+<script src="assets/support-bot.js"></script><script src="assets/effects.js"></script>
+</body></html>

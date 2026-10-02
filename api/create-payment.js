@@ -38,6 +38,10 @@ function signature(data, passphrase) {
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
+  if (process.env.PAYFAST_ENABLED !== "true") {
+    return res.status(503).json({ error: "PayFast is temporarily disabled. Please use EFT checkout.", eftCheckoutUrl: "/eft-checkout.html" });
+  }
+
   try {
     const body = typeof req.body === "string" ? JSON.parse(req.body) : (req.body || {});
     const pkg = PACKAGES[body.packageId];

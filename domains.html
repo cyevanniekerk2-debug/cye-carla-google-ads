@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Find Your Domain | Prime Digital</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html">PRIME<span>DIGITAL</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+      <a href="email.html">Business Email</a>
+      <a href="websites.html">Websites</a>
+    <a href="domains.html" class="active">Domains</a>
+    <a href="index.html#how">How It Works</a>
+  </nav>
+  <a class="nav-cta" href="#domain-search">Find My Domain</a>
+</header>
+
+<main>
+  <section class="domain-hero">
+    <div>
+      <span class="eyebrow">PRIME DIGITAL DOMAINS</span>
+      <h1>Your business deserves a <span>proper online address.</span></h1>
+      <p>Search for your business domain, register it through Prime Digital, and let us keep the domain managed and maintained for you.</p>
+    </div>
+  </section>
+
+  <section id="domain-search" class="domain-search-section">
+    <div class="domain-search-card">
+      <span class="eyebrow">DOMAIN SEARCH</span>
+      <h2>Find your perfect domain.</h2>
+      <p>Enter the name you want and we’ll check whether it is available.</p>
+
+      <form id="domainForm" class="domain-form">
+        <div class="domain-input-wrap">
+          <input id="domainName" autocomplete="off" placeholder="yourbusiness" aria-label="Domain name">
+          <select id="domainTld" aria-label="Domain extension">
+            <option value="co.za">.co.za</option>
+            <option value="com">.com</option>
+            <option value="net">.net</option>
+            <option value="org">.org</option>
+            <option value="africa">.africa</option>
+          </select>
+        </div>
+        <button class="btn primary" type="submit">Check Availability</button>
+      </form>
+
+      <div id="domainResult" class="domain-result" aria-live="polite">
+        <span class="result-icon">⌕</span>
+        <div><strong>Search a domain to get started</strong><p>Availability will be checked live when the reseller connection is active.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="domain-plan-section">
+    <div class="section-title">
+      <span class="eyebrow">DOMAIN CARE</span>
+      <h2>We keep the technical side handled.</h2>
+      <p class="lead-muted">Register your domain, then keep Prime Digital managing it month after month.</p>
+    </div>
+
+    <div class="domain-plan-card">
+      <div>
+        <span class="pill">DOMAIN MANAGEMENT</span>
+        <h3>Prime Domain Care</h3>
+        <div class="price">R150<span>/ month</span></div>
+        <p>Ongoing domain administration and renewal management through Prime Digital.</p>
+      </div>
+      <ul>
+        <li>Domain account management</li>
+        <li>Renewal monitoring</li>
+        <li>DNS management support</li>
+        <li>Domain connection assistance</li>
+        <li>Prime Digital support</li>
+      </ul>
+      <a class="btn primary" href="#domain-search">Find a Domain</a>
+    </div>
+
+    <div class="domain-note">
+      <strong>Your domain stays yours.</strong>
+      <p>Prime Digital manages the domain on your behalf while your management service is active. Registration, renewal, ownership and service terms will be shown clearly during checkout.</p>
+    </div>
+  </section>
+</main>
+<script src="assets/domain-search.js"></script>
+
+<button class="support-launcher" id="supportLauncher"><span>AI</span> Help me</button>
+<aside class="support-bot" id="supportBot" aria-hidden="true">
+<header><div><span class="bot-dot"></span><strong>Prime Assistant</strong><small>Website support</small></div><button id="closeBot">×</button></header>
+<div class="bot-messages" id="botMessages"><div class="bot-msg bot">Hi 👋 Ask me about Prime Digital's ads, websites, domains, email or pricing.</div></div>
+<div class="quick-prompts"><button>Google Ads prices</button><button>Website packages</button><button>Business email</button><button>Domain help</button></div>
+<form id="botForm"><input id="botInput" placeholder="Ask about Prime Digital..." autocomplete="off"><button>Send</button></form>
+<button class="agent-handoff" id="agentHandoff">Speak to Carla or Cye on WhatsApp</button>
+</aside>
+<script src="assets/support-bot.js"></script>
+<script src="assets/effects.js"></script>
+
+</body>
+</html>

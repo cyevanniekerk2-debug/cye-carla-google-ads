@@ -66,7 +66,7 @@ module.exports = async function handler(req, res) {
     const expectedSig = crypto.createHash("md5").update(signed).digest("hex");
     const sigOk = String(data.signature || "").toLowerCase() === expectedSig.toLowerCase();
 
-    const sourceOk = await validPayfastSource(req, sandbox);
+    const sourceOk = sandbox ? true : await validPayfastSource(req, sandbox);
 
     const expectedAmount = PACKAGES[data.custom_str1];
     const amountOk = Number.isFinite(expectedAmount) &&

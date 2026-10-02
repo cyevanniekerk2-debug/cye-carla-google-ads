@@ -1,12 +1,21 @@
 const crypto = require("crypto");
 
 const PACKAGES = {
-  "launch-day": { name: "Launch Day", days: "1 day", amount: 750 },
-  "quick-start": { name: "Quick Start", days: "7 days", amount: 4725 },
-  "growth-sprint": { name: "Growth Sprint", days: "10 days", amount: 6375 },
-  "momentum": { name: "Momentum", days: "15 days", amount: 9000 },
-  "monthly-growth": { name: "Monthly Growth", days: "30 days", amount: 15750 },
-  "business-builder": { name: "Business Builder", days: "3 months", amount: 40500 }
+  "quick-boost-daily": { name: "Quick Boost", days: "Daily campaign", amount: 600 },
+  "morning-boost-daily": { name: "Morning Boost", days: "Daily campaign", amount: 1000 },
+  "daily-drive-daily": { name: "Daily Drive", days: "Daily campaign", amount: 1600 },
+  "lead-rush-daily": { name: "Lead Rush", days: "Daily campaign", amount: 2500 },
+  "prime-day-daily": { name: "Prime Day", days: "Daily campaign", amount: 4000 },
+  "quick-boost-weekly": { name: "Quick Boost Weekly", days: "7-day campaign plan", amount: 3990 },
+  "morning-boost-weekly": { name: "Morning Boost Weekly", days: "7-day campaign plan", amount: 6720 },
+  "daily-drive-weekly": { name: "Daily Drive Weekly", days: "7-day campaign plan", amount: 10780 },
+  "lead-rush-weekly": { name: "Lead Rush Weekly", days: "7-day campaign plan", amount: 16975 },
+  "prime-day-weekly": { name: "Prime Day Weekly", days: "7-day campaign plan", amount: 27370 },
+  "quick-boost-monthly": { name: "Quick Boost Monthly", days: "30-day campaign plan", amount: 16200 },
+  "morning-boost-monthly": { name: "Morning Boost Monthly", days: "30-day campaign plan", amount: 27750 },
+  "daily-drive-monthly": { name: "Daily Drive Monthly", days: "30-day campaign plan", amount: 45300 },
+  "lead-rush-monthly": { name: "Lead Rush Monthly", days: "30-day campaign plan", amount: 71400 },
+  "prime-day-monthly": { name: "Prime Day Monthly", days: "30-day campaign plan", amount: 115500 }
 };
 
 function urlencode(value) {

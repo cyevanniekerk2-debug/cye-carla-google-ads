@@ -22,10 +22,35 @@ function parseBody(req) {
   return {};
 }
 
+const ITN_FIELDS = [
+  "m_payment_id",
+  "pf_payment_id",
+  "payment_status",
+  "item_name",
+  "item_description",
+  "amount_gross",
+  "amount_fee",
+  "amount_net",
+  "custom_str1",
+  "custom_str2",
+  "custom_str3",
+  "custom_str4",
+  "custom_str5",
+  "custom_int1",
+  "custom_int2",
+  "custom_int3",
+  "custom_int4",
+  "custom_int5",
+  "name_first",
+  "name_last",
+  "email_address",
+  "merchant_id"
+];
+
 function parameterString(data) {
-  return Object.entries(data)
-    .filter(([key, value]) => key !== "signature" && value !== undefined && value !== null && String(value) !== "")
-    .map(([key, value]) => key + "=" + urlencode(value))
+  return ITN_FIELDS
+    .filter(key => data[key] !== undefined && data[key] !== null && String(data[key]) !== "")
+    .map(key => key + "=" + urlencode(data[key]))
     .join("&");
 }
 

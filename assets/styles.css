@@ -263,3 +263,41 @@ body>*{position:relative;z-index:1}
 .payment-result p{color:var(--muted);line-height:1.7}
 @media(max-width:1100px){.pricing-grid{grid-template-columns:repeat(5,280px)}}
 @media(max-width:820px){.live-checkout-grid{grid-template-columns:1fr}.live-checkout-head{display:block}.live-checkout-form{grid-template-columns:1fr}.live-checkout-form .wide{grid-column:auto}}
+
+/* ===== TEMPORARY EFT CHECKOUT ===== */
+.eft-site-banner{max-width:1120px;margin:0 auto 28px;padding:16px 18px;border:1px solid rgba(104,255,178,.22);background:rgba(104,255,178,.05);border-radius:14px;display:flex;gap:12px;align-items:flex-start}
+.eft-site-banner strong{color:var(--accent);white-space:nowrap}
+.eft-site-banner span{color:#a9b5c2;line-height:1.55;font-size:13px}
+.eft-shell{max-width:1180px;margin:0 auto;padding:55px 5vw 100px}
+.eft-hero{text-align:center;max-width:900px;margin:0 auto 34px}
+.eft-hero h1{font-size:54px;letter-spacing:-.055em;margin:10px 0 14px}
+.eft-hero p{color:var(--muted);line-height:1.75}
+.eft-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+.eft-card{background:#0d121a;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 26px 70px rgba(0,0,0,.25)}
+.eft-card h2{margin:7px 0 20px}
+.eft-summary,.bank-lines{display:grid;gap:0;margin:18px 0 24px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.eft-summary>div,.bank-lines>div{display:flex;justify-content:space-between;gap:18px;padding:14px 16px;border-bottom:1px solid var(--line);background:#090d13}
+.eft-summary>div:last-child,.bank-lines>div:last-child{border-bottom:0}
+.eft-summary span,.bank-lines span{color:#83909e}
+.eft-summary strong,.bank-lines strong{text-align:right;color:#fff}
+.eft-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.eft-form label{display:grid;gap:7px;color:#aab5c3;font-size:12px}
+.eft-form .wide{grid-column:1/-1}
+.eft-form input,.eft-form textarea{padding:14px;border-radius:10px;border:1px solid var(--line);background:#080b10;color:white}
+.eft-legal{display:grid;gap:10px;margin-top:2px}
+.eft-legal label,.eft-proof-check label{display:flex;gap:9px;align-items:flex-start;line-height:1.45}
+.eft-legal a{color:var(--accent)}
+.eft-warning{padding:13px 15px;border-radius:11px;border:1px solid rgba(255,190,90,.25);background:rgba(255,190,90,.07);color:#f7c77c;line-height:1.55}
+.proof-card{margin-top:22px}
+.proof-card>p{color:var(--muted);line-height:1.7}
+.eft-proof-check{display:grid;gap:10px;margin:18px 0 22px;color:#c5ced8}
+.contact-founders button.founder-contact{font:inherit;text-align:left;cursor:pointer}
+.contact-founders button.founder-contact:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:820px){
+  .eft-grid{grid-template-columns:1fr}
+  .eft-form{grid-template-columns:1fr}
+  .eft-form .wide{grid-column:auto}
+  .eft-hero h1{font-size:40px}
+  .eft-site-banner{display:block}
+  .eft-site-banner strong{display:block;margin-bottom:6px}
+}

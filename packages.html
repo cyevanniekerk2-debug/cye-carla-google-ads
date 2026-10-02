@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Google Ads Packages | Prime Digital</title>
-  <meta name="description" content="Prime Digital Google Ads packages with daily, weekly and monthly campaign options.">
+  <meta name="description" content="Prime Digital Google Ads packages with daily, weekly and monthly campaign options. Temporary EFT checkout available while PayFast verification is completed.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
       <p>Daily, weekly and monthly Google Search campaign options. Prime Digital handles setup, targeting and campaign management.</p>
     </section>
 
-    <section id="packages" class="pricing-platform">
+    <section id="packages" class="pricing-platform"><div class="eft-site-banner"><strong>PAYFAST TEMPORARILY OFFLINE</strong><span>Orders can still be placed securely by EFT. You will receive an order reference and must send your order details plus proof of payment on WhatsApp. Orders start only after the EFT is verified.</span></div>
       <div class="pricing-tabs" role="tablist" aria-label="Campaign duration">
         <button class="active" data-kind="daily">Daily</button>
         <button data-kind="weekly">Weekly</button>
@@ -81,7 +81,7 @@
         <div class="price">${p.price}<span> / campaign</span></div>
         <div class="estimate-box"><strong>${p.meta}</strong><span>${p.desc}</span></div>
         <ul><li>Google Search campaign setup</li><li>Location & keyword targeting</li><li>Ad copy optimisation</li><li>Clicks/calls focused setup</li><li>Prime Digital management</li></ul>
-        <a class="btn primary full" href="checkout.html?package=${encodeURIComponent(p.id)}">Choose ${p.name}</a>
+        <a class="btn primary full" href="eft-checkout.html?product=${encodeURIComponent(p.id)}">Choose ${p.name}</a>
       </article>`).join('');
   }
   document.querySelectorAll('.pricing-tabs button').forEach(btn=>btn.addEventListener('click',()=>{

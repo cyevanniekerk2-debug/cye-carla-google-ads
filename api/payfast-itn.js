@@ -2,12 +2,21 @@ const crypto = require("crypto");
 const dns = require("dns").promises;
 
 const PACKAGES = {
-  "launch-day": 750,
-  "quick-start": 4725,
-  "growth-sprint": 6375,
-  "momentum": 9000,
-  "monthly-growth": 15750,
-  "business-builder": 40500
+  "quick-boost-daily": 600,
+  "morning-boost-daily": 1000,
+  "daily-drive-daily": 1600,
+  "lead-rush-daily": 2500,
+  "prime-day-daily": 4000,
+  "quick-boost-weekly": 3990,
+  "morning-boost-weekly": 6720,
+  "daily-drive-weekly": 10780,
+  "lead-rush-weekly": 16975,
+  "prime-day-weekly": 27370,
+  "quick-boost-monthly": 16200,
+  "morning-boost-monthly": 27750,
+  "daily-drive-monthly": 45300,
+  "lead-rush-monthly": 71400,
+  "prime-day-monthly": 115500
 };
 
 function urlencode(value) {

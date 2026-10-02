@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Campaign Packages | Prime Digital</title>
+  <title>Google Ads Packages | Prime Digital</title>
+  <meta name="description" content="Prime Digital Google Ads packages with daily, weekly and monthly campaign options.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -11,122 +12,85 @@
     <a class="brand" href="index.html">PRIME<span>DIGITAL</span></a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="packages.html" class="active">Packages</a>
+      <a href="packages.html" class="active">Google Ads</a>
+      <a href="websites.html">Websites</a>
       <a href="domains.html">Domains</a>
       <a href="email.html">Business Email</a>
-      <a href="websites.html">Websites</a>
-      <a href="index.html#how">How It Works</a>
+      <a href="client-portal.html">Client Portal</a>
     </nav>
-    <a class="nav-cta" href="#packages">Start Campaign</a>
+    <a class="nav-cta" href="#packages">Choose Package</a>
   </header>
 
   <main class="packages-page">
     <section class="package-hero">
-      <span class="eyebrow">FLEXIBLE CAMPAIGNS</span>
-      <h1>Advertise when <span>your customers are searching.</span></h1>
-      <p>Choose a short campaign burst or a stronger daily push. Prime Digital handles the setup, targeting and management.</p>
+      <span class="eyebrow">GOOGLE ADS PACKAGES</span>
+      <h1>Choose how long you want to <span>push your business.</span></h1>
+      <p>Daily, weekly and monthly Google Search campaign options. Prime Digital handles setup, targeting and campaign management.</p>
     </section>
 
-    <section id="packages" class="slider-wrap">
-      <button class="slider-btn prev" aria-label="Previous package">‹</button>
-      <div class="package-track">
-        <article class="package-card">
-          <div class="pill">QUICK START</div>
-          <h2>Quick Boost</h2>
-          <div class="price">R600<span>/ campaign</span></div>
-          <p>A compact advertising push for small, focused local campaigns.</p>
-          <div class="estimate-box"><strong>Estimated 7–15 clicks*</strong><span>Best for a short 1–2 hour local visibility burst</span></div>
-          <ul>
-            <li>Targeted Google Search campaign</li>
-            <li>Location targeting</li>
-            <li>Keyword targeting</li>
-            <li>Clicks & call-focused setup</li>
-            <li>Prime Digital management</li>
-          </ul>
-          <a class="btn primary full" href="checkout-quick-boost.html">Choose Quick Boost</a>
-        </article>
-
-        <article class="package-card featured">
-          <div class="pill">POPULAR</div>
-          <h2>Morning Boost</h2>
-          <div class="price">R1,000<span>/ campaign</span></div>
-          <p>Ideal for businesses wanting a targeted morning visibility push.</p>
-          <div class="estimate-box"><strong>Estimated 12–25 clicks*</strong><span>Best for a focused 2–3 hour morning campaign</span></div>
-          <ul>
-            <li>Selected morning campaign window</li>
-            <li>Local search targeting</li>
-            <li>Keyword optimisation</li>
-            <li>Call & website visit focus</li>
-            <li>Performance tracking</li>
-          </ul>
-          <a class="btn primary full" href="checkout-morning-boost.html">Choose Morning Boost</a>
-        </article>
-
-        <article class="package-card">
-          <div class="pill">MORE REACH</div>
-          <h2>Daily Drive</h2>
-          <div class="price">R1,600<span>/ campaign</span></div>
-          <p>A stronger campaign for businesses that want more daily visibility.</p>
-          <div class="estimate-box"><strong>Estimated 20–40 clicks*</strong><span>Best for a half-day to full business-day push</span></div>
-          <ul>
-            <li>Expanded campaign budget</li>
-            <li>Location & keyword targeting</li>
-            <li>Ad copy optimisation</li>
-            <li>Calls & click tracking setup</li>
-            <li>Prime Digital management</li>
-          </ul>
-          <a class="btn primary full" href="checkout-daily-drive.html">Choose Daily Drive</a>
-        </article>
-
-        <article class="package-card">
-          <div class="pill">HIGH INTENT</div>
-          <h2>Lead Rush</h2>
-          <div class="price">R2,500<span>/ campaign</span></div>
-          <p>Built for businesses that want a more aggressive lead-generation push.</p>
-          <div class="estimate-box"><strong>Estimated 31–62 clicks*</strong><span>Best for higher-intent searches and stronger daily reach</span></div>
-          <ul>
-            <li>Higher campaign capacity</li>
-            <li>High-intent keyword targeting</li>
-            <li>Location optimisation</li>
-            <li>Lead-focused campaign setup</li>
-            <li>Active campaign management</li>
-          </ul>
-          <a class="btn primary full" href="checkout-lead-rush.html">Choose Lead Rush</a>
-        </article>
-
-        <article class="package-card">
-          <div class="pill">MAXIMUM PUSH</div>
-          <h2>Prime Day</h2>
-          <div class="price">R4,000<span>/ campaign</span></div>
-          <p>Our strongest daily package for businesses ready for serious exposure.</p>
-          <div class="estimate-box"><strong>Estimated 50–100 clicks*</strong><span>Best for an intensive full-day campaign</span></div>
-          <ul>
-            <li>Premium campaign allocation</li>
-            <li>Advanced targeting</li>
-            <li>Search-intent optimisation</li>
-            <li>Calls, clicks & enquiry focus</li>
-            <li>Priority Prime Digital management</li>
-          </ul>
-          <a class="btn primary full" href="checkout-prime-day.html">Choose Prime Day</a>
-        </article>
+    <section id="packages" class="pricing-platform">
+      <div class="pricing-tabs" role="tablist" aria-label="Campaign duration">
+        <button class="active" data-kind="daily">Daily</button>
+        <button data-kind="weekly">Weekly</button>
+        <button data-kind="monthly">Monthly · Best Value</button>
       </div>
-      <button class="slider-btn next" aria-label="Next package">›</button>
+      <div id="pricingGrid" class="pricing-grid"></div>
+      <div class="notice pricing-notice">Click and call estimates vary by industry, location, keywords, competition and Google auction conditions. Estimates are planning ranges, not guarantees.</div>
     </section>
-
-    <p class="disclaimer">*Illustrative click estimates use an internal planning range of approximately R10–R20 per click. Actual Google Ads CPC, clicks, calls and enquiries vary by industry, competition, location, keywords, ad quality, website quality and auction conditions. Prime Digital will assess campaign viability before launch.</p>
   </main>
-  <script src="assets/site.js"></script>
 
-<button class="support-launcher" id="supportLauncher"><span>AI</span> Help me</button>
-<aside class="support-bot" id="supportBot" aria-hidden="true">
-<header><div><span class="bot-dot"></span><strong>Prime Assistant</strong><small>Website support</small></div><button id="closeBot">×</button></header>
-<div class="bot-messages" id="botMessages"><div class="bot-msg bot">Hi 👋 Ask me about Prime Digital's ads, websites, domains, email or pricing.</div></div>
-<div class="quick-prompts"><button>Google Ads prices</button><button>Website packages</button><button>Business email</button><button>Domain help</button></div>
-<form id="botForm"><input id="botInput" placeholder="Ask about Prime Digital..." autocomplete="off"><button>Send</button></form>
-<button class="agent-handoff" id="agentHandoff">Speak to Carla or Cye on WhatsApp</button>
-</aside>
-<script src="assets/support-bot.js"></script>
-<script src="assets/effects.js"></script>
+  <button class="support-launcher" id="supportLauncher"><span>AI</span> Help me</button>
+  <aside class="support-bot" id="supportBot" aria-hidden="true">
+    <header><div><span class="bot-dot"></span><strong>Prime Assistant</strong><small>Website support</small></div><button id="closeBot">×</button></header>
+    <div class="bot-messages" id="botMessages"><div class="bot-msg bot">Hi 👋 Ask me about Prime Digital's ads, websites, domains, email or pricing.</div></div>
+    <div class="quick-prompts"><button>Google Ads prices</button><button>Website packages</button><button>Business email</button><button>Domain help</button></div>
+    <form id="botForm"><input id="botInput" placeholder="Ask about Prime Digital..." autocomplete="off"><button>Send</button></form>
+    <button class="agent-handoff" id="agentHandoff">Speak to Carla or Cye on WhatsApp</button>
+  </aside>
 
+  <script>
+  const packages={
+    daily:[
+      {id:'quick-boost-daily',name:'Quick Boost',price:'R600',meta:'Estimated 7–15 clicks*',desc:'Short 1–2 hour local visibility burst'},
+      {id:'morning-boost-daily',name:'Morning Boost',price:'R1,000',meta:'Estimated 12–25 clicks*',desc:'Focused 2–3 hour morning campaign'},
+      {id:'daily-drive-daily',name:'Daily Drive',price:'R1,600',meta:'Estimated 20–40 clicks*',desc:'Half-day to full business-day push'},
+      {id:'lead-rush-daily',name:'Lead Rush',price:'R2,500',meta:'Estimated 31–62 clicks*',desc:'Higher-intent daily lead push'},
+      {id:'prime-day-daily',name:'Prime Day',price:'R4,000',meta:'Estimated 50–100 clicks*',desc:'Intensive full-day campaign'}
+    ],
+    weekly:[
+      {id:'quick-boost-weekly',name:'Quick Boost Weekly',price:'R3,990',meta:'Lower effective daily rate',desc:'7-day campaign plan'},
+      {id:'morning-boost-weekly',name:'Morning Boost Weekly',price:'R6,720',meta:'Save vs daily',desc:'7-day campaign plan'},
+      {id:'daily-drive-weekly',name:'Daily Drive Weekly',price:'R10,780',meta:'Save vs daily',desc:'7-day campaign plan'},
+      {id:'lead-rush-weekly',name:'Lead Rush Weekly',price:'R16,975',meta:'Save vs daily',desc:'7-day campaign plan'},
+      {id:'prime-day-weekly',name:'Prime Day Weekly',price:'R27,370',meta:'Save vs daily',desc:'7-day campaign plan'}
+    ],
+    monthly:[
+      {id:'quick-boost-monthly',name:'Quick Boost Monthly',price:'R16,200',meta:'Best-value daily rate',desc:'30-day campaign plan'},
+      {id:'morning-boost-monthly',name:'Morning Boost Monthly',price:'R27,750',meta:'Save R2,250 vs daily',desc:'30-day campaign plan'},
+      {id:'daily-drive-monthly',name:'Daily Drive Monthly',price:'R45,300',meta:'Save R2,700 vs daily',desc:'30-day campaign plan'},
+      {id:'lead-rush-monthly',name:'Lead Rush Monthly',price:'R71,400',meta:'Save R3,600 vs daily',desc:'30-day campaign plan'},
+      {id:'prime-day-monthly',name:'Prime Day Monthly',price:'R115,500',meta:'Save R4,500 vs daily',desc:'30-day campaign plan'}
+    ]
+  };
+  const grid=document.getElementById('pricingGrid');
+  function render(kind){
+    grid.innerHTML=packages[kind].map((p,i)=>`
+      <article class="package-card ${i===1?'featured':''}">
+        <div class="pill">${i===1?'POPULAR':'PACKAGE'}</div>
+        <h2>${p.name}</h2>
+        <div class="price">${p.price}<span> / campaign</span></div>
+        <div class="estimate-box"><strong>${p.meta}</strong><span>${p.desc}</span></div>
+        <ul><li>Google Search campaign setup</li><li>Location & keyword targeting</li><li>Ad copy optimisation</li><li>Clicks/calls focused setup</li><li>Prime Digital management</li></ul>
+        <a class="btn primary full" href="checkout.html?package=${encodeURIComponent(p.id)}">Choose ${p.name}</a>
+      </article>`).join('');
+  }
+  document.querySelectorAll('.pricing-tabs button').forEach(btn=>btn.addEventListener('click',()=>{
+    document.querySelectorAll('.pricing-tabs button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active'); render(btn.dataset.kind);
+  }));
+  render('daily');
+  </script>
+  <script src="assets/support-bot.js"></script>
+  <script src="assets/effects.js"></script>
 </body>
 </html>
